@@ -19,27 +19,27 @@ impl std::fmt::Debug for StemMeta {
         f.debug_struct("StemMeta")
             .field(
                 "c_1",
-                &hex::encode(compress_point_to_array(&self.c_1).unwrap()),
+                &base64::encode(compress_point_to_array(&self.c_1).unwrap()),
             )
             .field(
                 "c_2",
-                &hex::encode(compress_point_to_array(&self.c_2).unwrap()),
+                &base64::encode(compress_point_to_array(&self.c_2).unwrap()),
             )
             .field(
                 "hash_c1",
-                &hex::encode(scalar_to_array(&self.hash_c1).unwrap()),
+                &base64::encode(scalar_to_array(&self.hash_c1).unwrap()),
             )
             .field(
                 "hash_c2",
-                &hex::encode(scalar_to_array(&self.hash_c2).unwrap()),
+                &base64::encode(scalar_to_array(&self.hash_c2).unwrap()),
             )
             .field(
                 "stem commitment",
-                &hex::encode(compress_point_to_array(&self.stem_commitment).unwrap()),
+                &base64::encode(compress_point_to_array(&self.stem_commitment).unwrap()),
             )
             .field(
                 "hash_stem_commitment",
-                &hex::encode(scalar_to_array(&self.hash_stem_commitment).unwrap()),
+                &base64::encode(scalar_to_array(&self.hash_stem_commitment).unwrap()),
             )
             .finish()
     }
@@ -125,11 +125,11 @@ impl std::fmt::Debug for BranchMeta {
         f.debug_struct("BranchMeta")
             .field(
                 "commitment",
-                &hex::encode(compress_point_to_array(&self.commitment).unwrap()),
+                &base64::encode(compress_point_to_array(&self.commitment).unwrap()),
             )
             .field(
                 "hash_commitment",
-                &hex::encode(scalar_to_array(&self.hash_commitment).unwrap()),
+                &base64::encode(scalar_to_array(&self.hash_commitment).unwrap()),
             )
             .finish()
     }
